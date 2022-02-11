@@ -8,7 +8,12 @@ public class DigitRun {
 
     public static void main(String[] args) throws IOException {
 
-        new DigitService().print(inputData());
+        try {
+            new DigitService().print(inputData());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid data type - " + e.getMessage());
+        }
+
     }
 
     public static int[] inputData() throws IOException {
